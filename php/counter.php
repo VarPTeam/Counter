@@ -1,6 +1,6 @@
 <?php
 
-    $file = 'count_file.txt';
+    $file = 'fileCounter/countView_file.txt';
         if (file_exists($file)) 
         {
                 $fil = fopen($file, r);
