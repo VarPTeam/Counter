@@ -12,7 +12,10 @@
 
         <!-- AngularJS -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular.min.js"></script>
-
+        
+        <!-- PHP FILES -->
+        <?php include 'counter.php';?>
+        
         <!-- CSS INCLUDE -->        
         <link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css"/>
         <!-- EOF CSS INCLUDE -->                                    
@@ -355,24 +358,7 @@
                                         <div class="widget-subtitle">Views</div>
                                         <div class="widget-int">
                                             <?php
-                                                $file = 'count_file.txt';
-                                                if (file_exists($file)) 
-                                                {
-                                                        $fil = fopen($file, r);
-                                                        $dat = fread($fil, filesize($file)); 
-                                                        echo $dat+1;
-                                                        fclose($fil);
-                                                        $fil = fopen($file, w);
-                                                        fwrite($fil, $dat+1);
-                                                }
-
-                                                else
-                                                {
-                                                        $fil = fopen($file, w);
-                                                        fwrite($fil, 1);
-                                                        echo '1';
-                                                        fclose($fil);
-                                                }
+                                                echo $dat+1;
                                             ?>
                                         </div>
                                     </div>
@@ -770,6 +756,9 @@
         
         <script type="text/javascript" src="js/demo_dashboard.js"></script>
         <!-- END TEMPLATE -->
+        
+        
+        
     <!-- END SCRIPTS -->         
     </body>
 </html>
