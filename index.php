@@ -350,6 +350,32 @@
                                         <div class="widget-subtitle">Visitors</div>
                                         <div class="widget-int">1,977</div>
                                     </div>
+                                    <div>                                    
+                                        <div class="widget-title">Total</div>
+                                        <div class="widget-subtitle">Views</div>
+                                        <div class="widget-int">
+                                            <?php
+                                                $file = 'count_file.txt';
+                                                if (file_exists($file)) 
+                                                {
+                                                        $fil = fopen($file, r);
+                                                        $dat = fread($fil, filesize($file)); 
+                                                        echo $dat+1;
+                                                        fclose($fil);
+                                                        $fil = fopen($file, w);
+                                                        fwrite($fil, $dat+1);
+                                                }
+
+                                                else
+                                                {
+                                                        $fil = fopen($file, w);
+                                                        fwrite($fil, 1);
+                                                        echo '1';
+                                                        fclose($fil);
+                                                }
+                                            ?>
+                                        </div>
+                                    </div>
                                 </div>                            
                                 <div class="widget-controls">                                
                                     <a href="#" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="top" title="Remove Widget"><span class="fa fa-times"></span></a>
