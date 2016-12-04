@@ -14,7 +14,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular.min.js"></script>
         
         <!-- PHP FILES -->
-        <?php include 'counter.php';?>
+        <?php include 'php/counter.php';?>
         
         <!-- CSS INCLUDE -->        
         <link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css"/>
